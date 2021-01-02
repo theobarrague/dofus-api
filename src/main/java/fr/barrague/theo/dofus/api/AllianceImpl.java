@@ -69,7 +69,7 @@ class AllianceImpl implements Alliance {
 
     private void setPlayers(int players) {
         if (players < 0)
-            throw new IllegalArgumentException("Players must be equal or grater than 0 ( provided " + players + " )");
+            throw new IllegalArgumentException("Players must be equal or greater than 0 ( provided " + players + " )");
         this.players = players;
     }
 
@@ -79,7 +79,7 @@ class AllianceImpl implements Alliance {
 
     private void setVillages(int villages) {
         if (villages < 0)
-            throw new IllegalArgumentException("Villages must be equal or grater than 0 ( provided " + villages + " )");
+            throw new IllegalArgumentException("Villages must be equal or greater than 0 ( provided " + villages + " )");
         this.villages = villages;
     }
 
@@ -89,7 +89,7 @@ class AllianceImpl implements Alliance {
 
     private void setTerritories(int territories) {
         if (territories < 0)
-            throw new IllegalArgumentException("Territories must be equal or grater than 0 ( provided " + territories + " )");
+            throw new IllegalArgumentException("Territories must be equal or greater than 0 ( provided " + territories + " )");
         this.territories = territories;
     }
 
@@ -99,7 +99,7 @@ class AllianceImpl implements Alliance {
 
     private void setTotal(int total) {
         if (total < 0)
-            throw new IllegalArgumentException("Total must be equal or grater than 0 ( provided " + total + " )");
+            throw new IllegalArgumentException("Total must be equal or greater than 0 ( provided " + total + " )");
         this.total = total;
     }
 
