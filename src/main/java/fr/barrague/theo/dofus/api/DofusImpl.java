@@ -16,7 +16,7 @@ public class DofusImpl implements Dofus {
         try {
             String url;
             if (server == Server.All) url = ALLIANCES_URL;
-            else url = ALLIANCES_URL + "?servers=" + server.getServerCode();
+            else url = ALLIANCES_URL + "?servers=" + server.getServerCode() + "&search=#jt_list";
 
             Document doc = Jsoup.connect(url).get();
             Elements elements = doc.select(".ak-name");
@@ -27,14 +27,15 @@ public class DofusImpl implements Dofus {
                 int rank = this.getInt(parent.children().get(0));
                 String name = this.getString(parent.children().get(1));
                 Server serv = this.getServer(parent.children().get(2));
-                int guilds = this.getInt(parent.children().get(3));
+                int numberOfGuilds = this.getInt(parent.children().get(3));
                 int players = this.getInt(parent.children().get(4));
                 int villages = this.getInt(parent.children().get(5));
                 int territories = this.getInt(parent.children().get(6));
                 int total = this.getInt(parent.children().get(7));
 
-                AllianceImpl alliance = new AllianceImpl(rank, name, serv, guilds, players, villages, territories, total);
+                AllianceImpl alliance = new AllianceImpl(rank, name, serv, numberOfGuilds, players, villages, territories, total);
                 alliances.addAlliance(alliance);
+
             }
             return alliances;
         } catch (Exception e) {

@@ -10,7 +10,7 @@ public interface Alliance {
 
     Server getServer();
 
-    int getGuilds();
+    int getNumberOfGuilds();
 
     int getPlayers();
 
@@ -19,5 +19,4 @@ public interface Alliance {
     int getTerritories();
 
     int getTotal();
-
 }

@@ -8,17 +8,18 @@ class AllianceImpl implements Alliance {
     private int rank;
     private String name;
     private Server server;
-    private int guilds;
+    private int numberOfGuilds;
     private int players;
     private int villages;
     private int territories;
     private int total;
 
-    public AllianceImpl(int rank, String name, Server server, int guilds, int players, int villages, int territories, int total) {
+
+    public AllianceImpl(int rank, String name, Server server, int numberOfGuilds, int players, int villages, int territories, int total) {
         this.setRank(rank);
         this.setName(name);
         this.setServer(server);
-        this.setGuilds(guilds);
+        this.setNumberOfGuilds(numberOfGuilds);
         this.setPlayers(players);
         this.setVillages(villages);
         this.setTerritories(territories);
@@ -53,14 +54,14 @@ class AllianceImpl implements Alliance {
         this.server = server;
     }
 
-    public int getGuilds() {
-        return guilds;
+    public int getNumberOfGuilds() {
+        return numberOfGuilds;
     }
 
-    private void setGuilds(int guilds) {
+    private void setNumberOfGuilds(int guilds) {
         if (guilds < 0)
             throw new IllegalArgumentException("Guilds must be equal or greater than 0 ( provided " + guilds + " )");
-        this.guilds = guilds;
+        this.numberOfGuilds = guilds;
     }
 
     public int getPlayers() {
@@ -97,11 +98,13 @@ class AllianceImpl implements Alliance {
         return total;
     }
 
+
     private void setTotal(int total) {
         if (total < 0)
             throw new IllegalArgumentException("Total must be equal or greater than 0 ( provided " + total + " )");
         this.total = total;
     }
+
 
     @Override
     public String toString() {
